@@ -13,7 +13,7 @@ $("#IRegister").click(() => {
 
 
 // login next
-this.phrase = "the master key validation is passed";
+this.phrase = "Please input master secret";
 $("#CBButton").click(() => {
 	$("#init").css('display', 'none');
     if ($("#CBArea").val() === this.phrase) {
@@ -29,8 +29,6 @@ $("#CBButton").click(() => {
 $("#CB2Button2").click(() => {
     $("#createBlock2").css('display', 'none');
 });
-
-
 
 
 

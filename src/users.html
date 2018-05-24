@@ -51,20 +51,6 @@
 </head>
 
 <body>
-    <script>
-      var version = navigator.userAgent.toLowerCase();
-      var reg = /chrome\/[\d.]+/gi;
-      var result;
-      if (version.indexOf("chrome") > 0) {
-       //  result = version.match(reg);
-       //  version = (result + "").replace(/[^0-9]/ig, "");
-       //  if (Number(String(version).slice(0,2)) < 59) {
-       //      alert("您浏览器版本小于59，请升级到最新版本的chrome浏览器")
-       //  }
-      } else {
-          alert("请使用谷歌浏览器，否则登录,转账等操作可能会失败");
-      }
-     </script>
 	 
   <nav>
     <div class="container">
@@ -73,8 +59,9 @@
       </div>
       <div class="inline-block float-right">
         <a href="#!">Homepage</a>
-		<a href="#!">Team</a>
+	<a href="#!">Team</a>
         <a href="#!">Accounts</a>
+        <a href="./index_debug.html">Debug</a>
         <a href="#!">About</a>
       </div>
     </div>
@@ -89,8 +76,8 @@
     </div>
   </header>
 
-  <main>
 
+  <main>
     <section class="content-section no-padding-bottom">
       <div class="container text-center">
         <div class="row">
@@ -112,9 +99,10 @@
         </div>
       </div>
     </section>
-
-
   </main>
+
+
+
 
   <div class="container">
     <div class="row">
