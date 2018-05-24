@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+	<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+	<link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+<script>
+    $(document).ready(function(){
+      var version = navigator.userAgent.toLowerCase();
+      var reg = /chrome\/[\d.]+/gi;
+      var result;
+      var isChinese = true;
+    //   console.log(window);
+      if (window.navigator.language.indexOf('zh') > -1) {
+        isChinese = true;
+      } else {
+        isChinese = false;
+      }
+      if (version.indexOf("chrome") > 0) {
+        result = version.match(reg);
+        version = (result + "").replace(/[^0-9]/ig, "");
+        if (Number(String(version).slice(0,2)) < 59) {
+            if (isChinese) {
+                alert("您浏览器版本小于59，请升级到最新版本的chrome浏览器");
+            } else {
+                alert("The version of your browser is lower then requirement, plz update to the latest version");
+            }
+        }
+      } else {
+          if (isChinese) {
+              alert("请使用谷歌浏览器，否则转账等操作可能会失败！");
+            } else {
+              alert("Please be sure using the lastest version of chrome browser");
+            }
+      }
+        $.ajax({
+            type:'HEAD',
+            url:window.location.href,
+            complete:function(xhr,data){
+                var row = xhr.getResponseHeader('Date');
+                var serveTime = new Date(row).getTime();
+                var localTime = new Date().getTime();
+                console.log('serve:',serveTime,'localTime',localTime);
+                if (Math.abs(localTime - serveTime) > 30 * 60 * 1000) {
+                    if (isChinese) {
+                        alert('电脑时间有误，请您调校您的计算机时间.');
+                    } else {
+                        alert('Your local time is different with server, plz adjust your computert your computer');
+                    }
+                }
+            }
+        });
+    });
+</script>
+
+<script>document.location.href = "./login.html";</script>
+</body>
+</html>

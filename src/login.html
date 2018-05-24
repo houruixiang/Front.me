@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+	<script src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+	<link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="login-box-body">
+
+            <div id="init">
+                <p class="login-box-msg">Please Login</p>
+                <button id="ILogin" class="btn btn-primary btn-block">Login</button>
+                <br>
+                <button id="IRegister" class="btn btn-info btn-block">Register</button>
+            </div>
+
+            <div id="createBlock" class="form-group">
+                <p class="login-box-msg">Writeout your mnemonic and click next</p>
+                <textarea class="form-control" id="CBArea" rows="3" ></textarea>
+                <br>
+                <button class="btn btn-primary btn-block" id="CBButton">Next</button>
+            </div>
+
+            <div id="createBlock2" class="form-group">
+                <p class="login-box-msg">Type your mnemonic and click next</p>
+                <textarea id="CB2Input" class="form-control" rows="3"></textarea>
+                <br>
+                <button id="CB2Button" class="btn btn-primary btn-block">Next</button>
+            </div>
+
+
+            <div id="restore">
+                <p class="login-box-msg">Generate a new master secret and click Confirmed to save</p>
+                <textarea type="text" id="RInput" class="form-control" rows="3"></textarea>
+                <br>
+                <button id="ConfirmedButton" class="btn btn-primary btn-block">Confirmed</button>
+				<br>
+				<button id="CancelButton" class="btn btn-primary btn-block">Cancel</button>
+            </div>	
+        </div>
+    </div>
+
+
+    <script src="./js/login.js"></script>
+</body>
+
+</html>
